@@ -1,10 +1,12 @@
 from question_model import Question
-from data import question_data
+import json
 from quiz_brain import QuizBrain
 
 
 def start_quiz():
     question_bank = []
+    data_file = open('data.json')
+    question_data = json.load(data_file)
 
     for question in question_data:
         question_text = question["text"]
